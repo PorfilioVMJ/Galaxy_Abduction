@@ -28,6 +28,10 @@ public class LoginMenu extends Gui{
 		Graphics2D g2d = (Graphics2D) g;
 		enter = new Button("Login", 235, 300, 100, 50, g2d, g);
 		//USERNAME
+		Font font1 = new Font("arial", Font.BOLD, 30);
+		g.setFont(font1);
+		g.setColor(Color.BLUE);
+		g.drawString("Username", 200,  180);
 		input = new Input(text, 200, 200, 300, 50, g2d, g);
 		
 		Font font0 = new Font("arial", Font.BOLD, 50);
