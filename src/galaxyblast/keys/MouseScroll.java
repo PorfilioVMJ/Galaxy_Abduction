@@ -13,7 +13,11 @@ public class MouseScroll implements MouseWheelListener{
 	
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
-		GalaxyAbduction.scroller += 32;
+		if(e.getWheelRotation()>=0){
+			GalaxyAbduction.scroller -= 32;
+		}else{
+			GalaxyAbduction.scroller += 32;
+		}
 	}
 	
 }
