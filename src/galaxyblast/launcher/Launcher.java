@@ -35,7 +35,7 @@ public class Launcher extends JFrame implements HyperlinkListener {
 	       displayEditorPane.addHyperlinkListener(this);
 	       displayEditorPane.setDragEnabled(true);
 	       try {
-	    	   displayEditorPane.setPage("http://vmjlabs.comli.com/game.html");
+	    	   displayEditorPane.setPage("http://galaxyabduction.net16.net/game.html");
 	       } catch (IOException e1){
 	    	   e1.printStackTrace();
 	       }
