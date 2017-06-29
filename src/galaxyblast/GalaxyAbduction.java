@@ -490,15 +490,18 @@ public class GalaxyAbduction extends Canvas implements Runnable{
 				amount = bullet;
 			}else if(scroller == 35){
 				amount = rocket;
-			}else if(scroller == 57){
+			}else if(scroller == 67){
 				amount = none;
-			}else if(scroller == 79){
+			}else if(scroller == 99){
 				amount = none;
 			}
 			
 			if(select.getX() >= 120){
 				select.setX(3);
 				scroller = 3;
+			}else if(select.getX() < 3){
+				select.setX(99);
+				scroller = 99;
 			}
 			if(loader == 1000){
 				State = STATE.LOGIN;
@@ -550,7 +553,7 @@ public class GalaxyAbduction extends Canvas implements Runnable{
 				double py = a.getY();
 				a = new Alien(px, py, this);
 				score += 5;
-				aHealth -= 30;
+				aHealth -= 10;
 			}
 			if(laser.getX() >= p.getX() - 5 && laser.getX() <= p.getX() + 5 && laser.getY() >= p.getY() - 2 && laser.getY() <= p.getY() + 2){
 				//System.out.println("Hit");
