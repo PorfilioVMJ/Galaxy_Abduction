@@ -27,6 +27,8 @@ public class Launcher extends JFrame implements HyperlinkListener {
 	private JCheckBox checkbox;
 	
 	private JButton play;
+	private JButton vmjSearch;
+	
 	
 	public Launcher(){
 		 displayEditorPane = new JEditorPane();
@@ -47,7 +49,22 @@ public class Launcher extends JFrame implements HyperlinkListener {
 	       getContentPane().add(checkbox ,BorderLayout.PAGE_END);
 	       
 	       play = new JButton("Play");
+	       vmjSearch = new JButton("VMJSearch");
+
 	       getContentPane().add(play ,BorderLayout.PAGE_END);
+	       getContentPane().add(vmjSearch ,BorderLayout.PAGE_START);
+	       
+	       vmjSearch.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			       try {
+			    	   displayEditorPane.setPage("http://vmjsearch.netii.net/");
+			       } catch (IOException e1){
+			    	   e1.printStackTrace();
+			       }
+			}
+		});
 	       
 	       play.addActionListener(new ActionListener() {
 			
@@ -71,7 +88,7 @@ public class Launcher extends JFrame implements HyperlinkListener {
 	}
 	
    @SuppressWarnings("deprecation")
-public static void main(String[] args) {
+   public static void main(String[] args) {
        Launcher news = new Launcher();
        news.show();
    }
