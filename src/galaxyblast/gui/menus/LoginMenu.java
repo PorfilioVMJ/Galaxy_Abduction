@@ -26,7 +26,7 @@ public class LoginMenu extends Gui{
 	@Override
 	public void render(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		enter = new Button("Login", 235, 300, 100, 50, g2d, g);
+		enter = new Button("Confirm", 235, 300, 130, 50, g2d, g);
 		//USERNAME
 		Font font1 = new Font("arial", Font.BOLD, 30);
 		g.setFont(font1);
