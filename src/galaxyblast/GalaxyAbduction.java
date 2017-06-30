@@ -404,7 +404,47 @@ public class GalaxyAbduction extends Canvas implements Runnable{
 			}else{
 				if(userBuild.toString().length()<=10){
 					if(e.isShiftDown() || Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK)){
-						userBuild.append(KeyEvent.getKeyText(key).toUpperCase());
+						if(key==KeyEvent.VK_1){
+							userBuild.append("!");
+						}else if(key==KeyEvent.VK_2){
+							userBuild.append("@");
+						}else if(key==KeyEvent.VK_3){
+							userBuild.append("#");
+						}else if(key==KeyEvent.VK_4){
+							userBuild.append("$");
+						}else if(key==KeyEvent.VK_5){
+							userBuild.append("%");
+						}else if(key==KeyEvent.VK_6){
+							userBuild.append("^");
+						}else if(key==KeyEvent.VK_7){
+							userBuild.append("&");
+						}else if(key==KeyEvent.VK_8){
+							userBuild.append("*");
+						}else if(key==KeyEvent.VK_9){
+							userBuild.append("(");
+						}else if(key==KeyEvent.VK_0){
+							userBuild.append(")");
+						}else if(key==KeyEvent.VK_MINUS){
+							userBuild.append("_");
+						}else if(key==KeyEvent.VK_EQUALS){
+							userBuild.append("+");
+						}else if(key==KeyEvent.VK_OPEN_BRACKET){
+							userBuild.append("{");
+						}else if(key==KeyEvent.VK_CLOSE_BRACKET){
+							userBuild.append("}");
+						}else if(key==KeyEvent.VK_SEMICOLON){
+							userBuild.append(":");
+						}else if(key==KeyEvent.VK_COMMA){
+							userBuild.append("<");
+						}else if(key==KeyEvent.VK_PERIOD){
+							userBuild.append(">");
+						}else if(key==KeyEvent.VK_SLASH){
+							userBuild.append("?");
+						}else if(key==KeyEvent.VK_BACK_QUOTE){
+							userBuild.append("~");
+						}else{
+							userBuild.append(KeyEvent.getKeyText(key).toUpperCase());
+						}
 					}else{
 						userBuild.append(KeyEvent.getKeyText(key).toLowerCase());
 					}
