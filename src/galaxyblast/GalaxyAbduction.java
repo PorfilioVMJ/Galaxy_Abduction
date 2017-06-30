@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -387,7 +388,8 @@ public class GalaxyAbduction extends Canvas implements Runnable{
 				if(length!=0){
 					userBuild.deleteCharAt(length-1);
 				}
-			}else if(key==KeyEvent.VK_SHIFT||key==KeyEvent.VK_ALT||key==KeyEvent.VK_WINDOWS||key==KeyEvent.VK_CONTROL){
+			}else if(key==KeyEvent.VK_SHIFT||key==KeyEvent.VK_ALT||key==KeyEvent.VK_WINDOWS
+					||key==KeyEvent.VK_CONTROL||key==KeyEvent.VK_CAPS_LOCK){
 				//DO Nothing
 			}else if(key==KeyEvent.VK_ENTER){
 				if(hasName){
@@ -401,7 +403,11 @@ public class GalaxyAbduction extends Canvas implements Runnable{
 				}
 			}else{
 				if(userBuild.toString().length()<=10){
-					userBuild.append(KeyEvent.getKeyText(key));
+					if(e.isShiftDown() || Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK)){
+						userBuild.append(KeyEvent.getKeyText(key).toUpperCase());
+					}else{
+						userBuild.append(KeyEvent.getKeyText(key).toLowerCase());
+					}
 					hasName=true;
 				}
 			}
@@ -532,7 +538,7 @@ public class GalaxyAbduction extends Canvas implements Runnable{
 			if(roll == 500){
 				State = STATE.MENU;
 			}
-		
+			
 			//TODO: Fix alien death
 			if(b.getX() >= a.getX() - 5 && b.getX() <= a.getX() + 5 && b.getY() >= a.getY() - 2 && b.getY() <= a.getY() + 2){
 				//System.out.println("Hit");
