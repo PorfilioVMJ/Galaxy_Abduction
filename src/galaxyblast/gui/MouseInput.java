@@ -149,7 +149,7 @@ public class MouseInput implements MouseListener{
 			}
 		}
 		if(GalaxyAbduction.State == GalaxyAbduction.STATE.LOGIN){
-			if(mx > 235 && mx <= 235+100){
+			if(mx > 235 && mx <= 235+130){
 				if(my >= 300 && my <= 300+50){
 					if(GalaxyAbduction.hasName){
 						GalaxyAbduction.State = GalaxyAbduction.STATE.MENU;
