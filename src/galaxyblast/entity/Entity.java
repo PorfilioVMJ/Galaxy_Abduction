@@ -29,6 +29,8 @@ public abstract class Entity {
 		sprite = ss.grabImage(cols, row, 32, 32);
 	}
 	
+   public abstract void enableAI();
+
 	public abstract void tick();
 	
 	public abstract void render(Graphics g);
